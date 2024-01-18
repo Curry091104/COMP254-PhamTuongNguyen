@@ -1,3 +1,5 @@
+package PhamTuongNguyen_COMP254Lab1_Ex1;
+
 public class DoublyLinkedList {
     //Main
     public static void main(String[] args){

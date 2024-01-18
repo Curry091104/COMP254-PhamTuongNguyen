@@ -1,3 +1,5 @@
+package PhamTuongNguyen_COMP254Lab1_Ex2;
+
 public class SinglyLinkedList{
     //main
     public static void main(String[] args){

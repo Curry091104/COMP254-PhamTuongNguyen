@@ -1,4 +1,6 @@
-public class Node{
+package PhamTuongNguyen_COMP254Lab1_Ex3;
+
+public class Node {
     private Node prev;
     private Node next;
     private Object data;
