@@ -5,10 +5,6 @@ public class Node{
     private Node next;
     private Object data;
 
-    Node(Object data, Node next){
-        this.data = data;
-        this.next = next;
-    }
     Node(Node prev, Object data, Node next){
         this.prev = prev;
         this.data = data;
