@@ -1,2 +1,2 @@
-<b>Created by:</b> Pham Tuong Nguyen</br>
-<b>ID:</b> 301298505</br>
+Created by: Pham Tuong Nguyen</br>
+ID: 301298505</br>
