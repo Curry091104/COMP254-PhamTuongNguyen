@@ -16,7 +16,7 @@ public class DoublyLinkedList {
         System.out.println();
 
         System.out.println("After concatenating");
-        M.concatenate(L); // the end of L concatenated to the beginning of
+        M.concatenate(L); // the end of L concatenated to the beginning of M
         M.display();
     }
     private Node header;
