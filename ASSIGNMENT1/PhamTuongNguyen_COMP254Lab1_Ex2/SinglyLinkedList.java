@@ -1,7 +1,7 @@
 package PhamTuongNguyen_COMP254Lab1_Ex2;
 
 public class SinglyLinkedList{
-    //main
+    //Test harness
     public static void main(String[] args){
         SinglyLinkedList myList = new SinglyLinkedList();
 
@@ -15,12 +15,26 @@ public class SinglyLinkedList{
         System.out.print("Initial list: ");
         myList.displayList();
 
-
         System.out.println("\nAfter swapping");
         myList.swapNodes(0,4); // swap nodes with data 0 and 4
         myList.displayList();
     }
-
+    //Node class
+    class Node{
+        private Node next;
+        private Object data;
+    
+        Node(Object data, Node next){
+            this.data = data;
+            this.next = next;
+        }
+    
+        public Object getElement() {return data;}
+        public Node getNext() {return next;}
+        public void setNext(Node next) {this.next = next;}
+        
+    }
+    //------------------------------------------------
     private Node head;
     private Node tail;
     private int size;

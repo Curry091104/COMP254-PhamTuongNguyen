@@ -1,7 +1,7 @@
 package PhamTuongNguyen_COMP254Lab1_Ex1;
 
 public class DoublyLinkedList {
-    //Main
+    //Test harness
     public static void main(String[] args){
         DoublyLinkedList M = new DoublyLinkedList();
         DoublyLinkedList L = new DoublyLinkedList();
@@ -30,6 +30,25 @@ public class DoublyLinkedList {
         this.trailer.setNext(L.header);
         L.header.setPrev(this.trailer);
     }
+    //Node class
+    class Node{
+        private Node prev;
+        private Node next;
+        private Object data;
+    
+        Node(Node prev, Object data, Node next){
+            this.prev = prev;
+            this.data = data;
+            this.next = next;
+        }
+    
+        public Object getElement() {return data;}
+        public Node getPrev() {return prev;}
+        public void setPrev(Node prev) {this.prev = prev;}
+        public Node getNext() {return next;}
+        public void setNext(Node next) {this.next = next;}
+    }
+    //------------------------------------------------
     public void addFirst(Object data){
         Node newNode = new Node(null, data, null);
         if(isEmpty()){

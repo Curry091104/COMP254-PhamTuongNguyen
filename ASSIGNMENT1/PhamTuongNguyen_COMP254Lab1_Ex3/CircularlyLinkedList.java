@@ -1,7 +1,7 @@
 package PhamTuongNguyen_COMP254Lab1_Ex3;
 
 class CircularlyLinkedList{
-    //main
+    //Test harness
     public static void main(String[] args){
         CircularlyLinkedList myList = new CircularlyLinkedList();
 
@@ -13,26 +13,44 @@ class CircularlyLinkedList{
 
 
         System.out.print("\nAfter clone: ");
-        CircularlyLinkedList cloneList = myList.clone();
-        cloneList.displayList();
+        try{
+            CircularlyLinkedList cloneList = myList.clone();
+            cloneList.displayList();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
-
+    //Node class
+    class Node{
+        private Node next;
+        private Object data;
+    
+        Node(Object data, Node next){
+            this.data = data;
+            this.next = next;
+        }
+    
+        public Object getElement() {return data;}
+        public Node getNext() {return next;}
+        public void setNext(Node next) {this.next = next;}
+    }
+    //------------------------------------------------
 
     private Node tail;
     private int size;
     public int size(){return size;}
     public boolean isEmpty(){return size == 0;}
-    public CircularlyLinkedList clone() {
+    public CircularlyLinkedList clone() throws CloneNotSupportedException{
         CircularlyLinkedList newList = new CircularlyLinkedList();
         if (!isEmpty()) {
-            Node currentOriginal = tail.getNext();
-            Node currentNew = new Node(currentOriginal.getElement(), currentOriginal); 
+            Node walk = tail.getNext();
+            Node currentNew = new Node(walk.getElement(), walk); 
             newList.tail = currentNew;
             newList.size++;
     
-            while (currentOriginal != tail) {
-                currentOriginal = currentOriginal.getNext();
-                currentNew.setNext(currentOriginal);
+            while (walk != tail) {
+                walk = walk.getNext();
+                currentNew.setNext(walk);
                 currentNew = currentNew.getNext();
                 newList.size++;
             }
