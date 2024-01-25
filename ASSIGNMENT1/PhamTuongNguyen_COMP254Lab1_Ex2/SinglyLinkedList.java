@@ -23,13 +23,18 @@ public class SinglyLinkedList{
     class Node{
         private Node next;
         private Object data;
+
+        Node(Object data){
+            this.data = data;
+            this.next = null;
+        }
     
         Node(Object data, Node next){
             this.data = data;
             this.next = next;
         }
     
-        public Object getElement() {return data;}
+        public Object getData() {return data;}
         public Node getNext() {return next;}
         public void setNext(Node next) {this.next = next;}
         
@@ -49,12 +54,12 @@ public class SinglyLinkedList{
             Node node1 = head;
             Node node2 = head;
             //find the data1
-            while(node1 != null && node1.getElement() != data1){
+            while(node1 != null && node1.getData() != data1){
                 prevNode1 = node1;
                 node1 = node1.getNext();
             }
             //find the data2
-            while(node2 != null && node2.getElement() != data2){
+            while(node2 != null && node2.getData() != data2){
                 prevNode2 = node2;
                 node2 = node2.getNext();
             }
@@ -73,7 +78,7 @@ public class SinglyLinkedList{
                 head = node1;
             }
 
-            //Swap the node
+            //Swap the nodes
             Node tmp = node1.getNext();
             node1.setNext(node2.getNext());
             node2.setNext(tmp);
@@ -92,7 +97,7 @@ public class SinglyLinkedList{
             return null;
         }
         else {
-            return head.getElement();
+            return head.getData();
         }
     }
     public Object last(){
@@ -100,7 +105,7 @@ public class SinglyLinkedList{
             return null;
         }
         else {
-            return tail.getElement();
+            return tail.getData();
         }
     }
     public void addFirst(Object data){
@@ -111,7 +116,7 @@ public class SinglyLinkedList{
         size++;
     }
     public void addLast(Object data){
-        Node newNode = new Node(data, null);
+        Node newNode = new Node(data);
         if(isEmpty()){
             head = tail;
         }
@@ -121,24 +126,12 @@ public class SinglyLinkedList{
         tail = newNode;
         size++;
     }
-    public Object removeFirst(){
-        if(isEmpty()){
-            return null;
-        }
-        Node newNode = head.getNext();
-        head = newNode;
-        size--;
-        if(isEmpty()){
-            tail = null;
-        }
-        return newNode.getElement();
-    }
     public void displayList() {
         try{
             Node current = head;
 
             while (current != null) {
-                System.out.print(current.getElement() + " ");
+                System.out.print(current.getData() + " ");
                 current = current.getNext();
             }
         }catch (Exception e){

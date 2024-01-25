@@ -24,13 +24,18 @@ class CircularlyLinkedList{
     class Node{
         private Node next;
         private Object data;
-    
+        
+        Node(Object data){
+            this.data = data;
+            this.next = null;
+        }
+
         Node(Object data, Node next){
             this.data = data;
             this.next = next;
         }
     
-        public Object getElement() {return data;}
+        public Object getData() {return data;}
         public Node getNext() {return next;}
         public void setNext(Node next) {this.next = next;}
     }
@@ -43,18 +48,22 @@ class CircularlyLinkedList{
     public CircularlyLinkedList clone() throws CloneNotSupportedException{
         CircularlyLinkedList newList = new CircularlyLinkedList();
         if (!isEmpty()) {
-            Node walk = tail.getNext();
-            Node currentNew = new Node(walk.getElement(), walk); 
-            newList.tail = currentNew;
+            Node head = tail.getNext();
+            Node headNew = new Node(head.getData());
+            headNew.setNext(headNew);
+            newList.tail = headNew;
             newList.size++;
-    
-            while (walk != tail) {
-                walk = walk.getNext();
-                currentNew.setNext(walk);
-                currentNew = currentNew.getNext();
+            Node current = head;
+            Node currentNew = headNew;
+            while(current != tail){
+                current = current.getNext();
+                Node other = new Node(current.getData());
+                other.setNext(headNew);
+                currentNew.setNext(other);
+                currentNew = other;
+                newList.tail = currentNew;
                 newList.size++;
             }
-            newList.tail = currentNew;
         }
         return newList;
     }
@@ -80,7 +89,7 @@ class CircularlyLinkedList{
     }
     public void addFirst(Object data){
         if(isEmpty()){
-            tail = new Node(data, null);
+            tail = new Node(data);
             tail.setNext(tail);
         }
         else{
@@ -91,7 +100,7 @@ class CircularlyLinkedList{
     }
     public void addLast(Object data){
         if(isEmpty()){
-            tail = new Node(data, null);
+            tail = new Node(data);
             tail.setNext(tail);
         }
         else{
@@ -101,32 +110,11 @@ class CircularlyLinkedList{
         }
         size++;
     }
-    public Object removeFirst(){
-        if(isEmpty()){
-            return null;
-        }
-        Node head = tail.getNext();
-        if(tail == head){
-            tail = null;
-        }
-        else{
-            tail.setNext(head.getNext());
-        }
-        size--;
-        return head.getElement();
-    }
-    public void rotate(){
-        if(tail != null) {
-            tail = tail.getNext();
-        }
-    }
-
-    //function display list
     public void displayList() {
         try{
             Node current = tail.getNext(); //tail.getNext() is the head of the list in circularly linked list
             do {
-                System.out.print(current.getElement() + " ");
+                System.out.print(current.getData() + " ");
                 current = current.getNext();
             } while (current != tail.getNext());
         }catch (Exception e){

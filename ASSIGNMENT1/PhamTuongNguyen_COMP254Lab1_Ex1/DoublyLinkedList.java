@@ -35,6 +35,12 @@ public class DoublyLinkedList {
         private Node prev;
         private Node next;
         private Object data;
+
+        Node(Object data){
+            this.prev = null;
+            this.data = data;
+            this.next = null;
+        }
     
         Node(Node prev, Object data, Node next){
             this.prev = prev;
