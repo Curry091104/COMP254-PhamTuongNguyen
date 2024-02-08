@@ -45,7 +45,7 @@ class CircularlyLinkedList{
     private int size;
     public int size(){return size;}
     public boolean isEmpty(){return size == 0;}
-    public CircularlyLinkedList clone() throws CloneNotSupportedException{
+    public CircularlyLinkedList clone(){
         CircularlyLinkedList newList = new CircularlyLinkedList();
         if (!isEmpty()) {
             Node head = tail.getNext();

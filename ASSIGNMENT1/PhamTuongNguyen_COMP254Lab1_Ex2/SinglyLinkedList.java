@@ -48,7 +48,7 @@ public class SinglyLinkedList{
 
     public void swapNodes(Object data1, Object data2){
         if(data1 != data2){
-            //find Nodes contaning the data1 and the data2
+            //find Nodes containing the data1 and the data2
             Node prevNode1 = null;
             Node prevNode2 = null;
             Node node1 = head;

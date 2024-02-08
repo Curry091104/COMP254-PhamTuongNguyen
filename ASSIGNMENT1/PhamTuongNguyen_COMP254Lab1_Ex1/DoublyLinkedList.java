@@ -18,8 +18,12 @@ public class DoublyLinkedList {
         System.out.println();
 
         System.out.println("After concatenating");
+
         M.concatenate(L); // the end of L concatenated to the beginning of M
         M.display();
+
+        //DoublyLinkedList newList = concatenate(M, L);
+        //newList.display();
     }
     private Node header;
     private Node trailer;
@@ -29,7 +33,20 @@ public class DoublyLinkedList {
     public void concatenate(DoublyLinkedList L){ 
         this.trailer.setNext(L.header);
         L.header.setPrev(this.trailer);
+        this.trailer = L.trailer;
+        this.size += L.size;
     }
+
+
+    // Another solution
+    // public static DoublyLinkedList concatenate(DoublyLinkedList first, DoublyLinkedList second){
+    //     DoublyLinkedList concatenateList = first;
+    //     concatenateList.trailer.setNext(second.header);
+    //     second.header.setPrev(concatenateList.trailer);
+    //     concatenateList.trailer = second.trailer;
+    //     concatenateList.size += second.size;
+    //     return concatenateList;
+    // }
     //Node class
     class Node{
         private Node prev;
