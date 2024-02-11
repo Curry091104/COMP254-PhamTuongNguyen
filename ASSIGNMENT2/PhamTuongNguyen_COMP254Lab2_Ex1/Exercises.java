@@ -12,7 +12,7 @@ class Exercises {
     int n = arr.length, total = 0; // constant time
     for (int j=0; j < n; j++)      // loop from 0 to n-1 
       total += arr[j]; 
-    return total;
+    return total; //
   }
   /** Example 1:
    * Time complexity: O(n)
