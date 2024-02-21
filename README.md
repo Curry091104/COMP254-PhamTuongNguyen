@@ -7,4 +7,4 @@ Assignment 1: Using Fundamental Data Structures </br>
 Assignment 2: Algorithm Analysis </br>
 Assignment 3: Recursion Algorithm </br>
 Assignment 4: Using ADT Stacks, Queues, and Lists </br>
-Midterm </br>
+Midterm Test</br>
