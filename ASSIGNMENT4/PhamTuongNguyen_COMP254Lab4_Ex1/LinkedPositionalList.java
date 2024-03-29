@@ -98,7 +98,7 @@ public class LinkedPositionalList<E> implements PositionalList<E>{
         Position<String> pos3 = myList.addLast("C");
 
         try{
-            System.out.println(myList.indexOf(pos1));
+            System.out.println(myList.indexOf(pos3));
         } catch(Exception e){
             e.getMessage();
         }

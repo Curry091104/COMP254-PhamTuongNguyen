@@ -43,7 +43,7 @@ class PrefixAverage {
       a[j] = total / (j + 1); // compute average based on current sum
     }
     return a;
-  }
+  } 
 
   public static void main(String[] args) {
     int[] sizes = { 100, 500, 1000, 10000, 20000};

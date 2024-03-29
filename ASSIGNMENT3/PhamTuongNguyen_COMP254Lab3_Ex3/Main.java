@@ -18,6 +18,7 @@ public class Main {
                 if (child.getName().equals(filename)) {
                     System.out.println("\n\nFound: " + child.getAbsolutePath() + "\n\n");
                 } else {
+                    System.out.println(child.getAbsolutePath());
                     find(child, filename);
                 }
             }

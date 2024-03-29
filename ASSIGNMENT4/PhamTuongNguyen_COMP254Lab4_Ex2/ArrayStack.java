@@ -105,15 +105,15 @@ public class ArrayStack<E> implements Stack<E> {
         }
     }
     public static void main(String[] args) {
-        Stack<Integer> S = new ArrayStack<>(3);
-        Stack<Integer> T = new ArrayStack<>(3);
+        ArrayStack<Integer> S = new ArrayStack<>(3);
+        ArrayStack<Integer> T = new ArrayStack<>(3);
         S.push(1);
         S.push(2);
         S.push(3);
         System.out.println("Stack S");
         System.out.println(S);
         try{
-            transfer(S, T);
+            transfer2(S, T);
             System.out.println("After transfering");
             System.out.println("Stack T");
             System.out.println(T);
