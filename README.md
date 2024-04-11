@@ -9,3 +9,4 @@ Assignment 3: Recursion Algorithm</br>
 Assignment 4: Using ADT Stacks, Queues, and Lists</br>
 Assignment 5: Using Trees and Priority Queues</br>
 Assignment 6: Using Maps and Hash Tables</br>
+Assignment 7: Search Trees and Sorting
